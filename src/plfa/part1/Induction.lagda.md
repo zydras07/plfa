@@ -980,12 +980,6 @@ for all naturals `m`, `n`, and `p`.
 ∸-+-assoc zero n p rewrite zero-∸ n | zero-∸ (n + p) | zero-∸ p = refl
 ∸-+-assoc (suc m) zero p = refl
 ∸-+-assoc (suc m) (suc n) p rewrite ∸-+-assoc m n p = refl
-
-open import Relation.Nullary using (¬_)
-open import Data.Sum using (_⊎_; inj₁; inj₂)
-
-ex : ∀ {P Q : Set} → ¬ ¬ ((P → Q) → (¬ P ⊎ Q))
-ex = λ H → H (λ _ → inj₁ (λ z₂ → H (λ z₃ → inj₂ (z₃ z₂))))
 ```
 
 #### Exercise `+*^` (stretch)
